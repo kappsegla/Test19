@@ -33,7 +33,7 @@ public class Triangle {
 
     //Scalene triangles are triangles where each side is a different length.
     public boolean isScalene() {
-        if (uniqueSides() == 1) {
+        if (uniqueSides() == 3) {
             return true;
         }
         return false;
