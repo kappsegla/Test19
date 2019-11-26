@@ -5,6 +5,8 @@ public class Triangle {
     double[] sides;
 
     public Triangle(double a, double b, double c) {
+        if( a <= 0 || b <= 0 || c <= 0)
+            throw new IllegalArgumentException("Argument zero or less");
         sides = new double[]{a, b, c};
     }
 
@@ -21,11 +23,8 @@ public class Triangle {
     }
 
     public Triangle(Point[] s) {
-        sides = new double[s.length];
-        sides[0] = Math.sqrt(Math.pow((double) (s[1].x - s[0].x), 2.0) + Math.pow((double) (s[1].y - s[0].y), 2.0));
-        sides[1] = Math.sqrt(Math.pow((double) (s[1].x - s[2].x), 2.0) + Math.pow((double) (s[1].y - s[2].y), 2.0));
-        sides[2] = Math.sqrt(Math.pow((double) (s[2].x - s[0].x), 2.0) + Math.pow((double) (s[2].y - s[0].y), 2.0));
-    }
+            this(s[0],s[1],s[2]);
+       }
 
     private int uniqueSides() {
         return (int) Arrays.stream(sides).distinct().count();

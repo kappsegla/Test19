@@ -2,6 +2,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Executable;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -10,6 +12,14 @@ class TriangleTest {
     private final Triangle scaleneTriangle = new Triangle(3.0, 4.0, 5.0);
     private final Triangle isoTriangle = new Triangle(3.0, 3.0, 4.0);
     private final Triangle equTriangle = new Triangle(3.0, 3.0, 3.0);
+
+    @Test
+    void constructorThrowsExceptionForArgumentsWithValueZeroOrLess(){
+
+        //Triangle triangle = new Triangle(0,-1,0);
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,  ()-> new Triangle(0,-1, 0));
+        assertEquals("Argument zero or less", exception.getMessage());
+    }
 
     @Test
     @DisplayName("isScalene should return true for a scalene triangle.")
