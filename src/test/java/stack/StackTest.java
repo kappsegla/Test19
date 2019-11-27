@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("A stack")
-class TestingAStackDemo {
+class StackTest {
 
     Stack<Object> stack;
 

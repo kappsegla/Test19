@@ -1,9 +1,11 @@
 package invoice;
 
+import java.util.Objects;
+
 public class Invoice {
 
-    private String customer;
-    private double value;
+    final private String customer;
+    final private double value;
 
     public Invoice(String customer, double value) {
         this.customer = customer;
@@ -18,11 +20,12 @@ public class Invoice {
         return value;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
 
+    @Override
+    final public boolean equals(Object o) {
+        if (this == o) return true;
+        if(!(o instanceof Invoice))
+            return false;
         Invoice invoice = (Invoice) o;
 
         if (Double.compare(invoice.value, value) != 0) return false;
@@ -30,12 +33,7 @@ public class Invoice {
     }
 
     @Override
-    public int hashCode() {
-        int result;
-        long temp;
-        result = customer != null ? customer.hashCode() : 0;
-        temp = Double.doubleToLongBits(value);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        return result;
+    final public int hashCode() {
+        return Objects.hash(customer, value);
     }
 }
