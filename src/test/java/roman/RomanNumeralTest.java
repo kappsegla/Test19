@@ -1,6 +1,7 @@
 package roman;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -8,6 +9,14 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RomanNumeralTest {
+
+    RomanNumeral roman;
+
+    @BeforeEach
+    void setUp(){
+        roman = new RomanNumeral();
+    }
+
 
     @ParameterizedTest
     @CsvSource({
@@ -20,28 +29,22 @@ class RomanNumeralTest {
             "'M',1000"
     })
     void singleNumber(String character, int valid) {
-        assertEquals(new RomanNumeral().convert(character), valid);
+        assertEquals(valid, roman.convert(character));
     }
+
 
     @Test
     void numberWithManyDigits() {
-        RomanNumeral roman = new RomanNumeral();
-        int result = roman.convert("VIII");
-        Assertions.assertEquals(8, result);
+        assertEquals(8, roman.convert("VIII"));
     }
 
     @Test
     void numberWithSubtractiveNotation() {
-        RomanNumeral roman = new RomanNumeral();
-        int result = roman.convert("IV");
-        Assertions.assertEquals(4, result);
+        assertEquals(4, roman.convert("IV"));
     }
 
     @Test
     void numberWithAndWithoutSubtractiveNotation() {
-        RomanNumeral roman = new RomanNumeral();
-        int result = roman.convert("XLIV");
-        Assertions.assertEquals(44, result);
+        assertEquals(44, roman.convert("XLIV"));
     }
-
 }
