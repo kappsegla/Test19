@@ -1,6 +1,4 @@
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.lang.reflect.Executable;
 
@@ -12,6 +10,11 @@ class TriangleTest {
     private final Triangle scaleneTriangle = new Triangle(3.0, 4.0, 5.0);
     private final Triangle isoTriangle = new Triangle(3.0, 3.0, 4.0);
     private final Triangle equTriangle = new Triangle(3.0, 3.0, 3.0);
+
+    @BeforeEach
+    void setUp(){
+
+    }
 
     @Test
     void constructorThrowsExceptionForArgumentsWithValueZeroOrLess(){
