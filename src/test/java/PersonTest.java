@@ -14,6 +14,4 @@ public class PersonTest {
     public void personIsAdult(int age, boolean valid) throws Exception {
         assertEquals(new Person(age).isAdult(), valid);
     }
-
-
 }
