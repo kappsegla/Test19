@@ -10,4 +10,6 @@ public interface InvoiceDao {
     void save(Invoice inv);
 
     void close();
+
+    default boolean test(){return false;}
 }

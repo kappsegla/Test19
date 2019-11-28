@@ -36,4 +36,12 @@ public class Invoice {
     final public int hashCode() {
         return Objects.hash(customer, value);
     }
+
+    @Override
+    public String toString() {
+        return "Invoice{" +
+                "customer='" + customer + '\'' +
+                ", value=" + value +
+                '}';
+    }
 }
