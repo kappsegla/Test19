@@ -82,9 +82,6 @@
                 <version>3.8.1</version>
                 <configuration>
                     <release>11</release>
-                    <compilerArgs>
-                        <arg>-Xlint</arg>
-                    </compilerArgs>
                 </configuration>
             </plugin>
             <plugin>
