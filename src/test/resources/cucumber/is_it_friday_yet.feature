@@ -11,9 +11,9 @@ Feature: Is it Friday yet?
     When I ask whether it's Friday yet
     Then I should be told "TGIF"
 
-    Scenario: Count Fridays
-    Given the following days:
-      | Monday   |
-      | Friday |
-      | Sunday |
-      Then tell me there is 1 Fridays
+#    Scenario: Count Fridays
+#    Given the following days:
+#      | Monday   |
+#      | Friday |
+#      | Sunday |
+#      Then tell me there is 1 Fridays

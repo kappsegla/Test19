@@ -29,7 +29,7 @@ String b;
         typeToMock.clear();
 
         // selective, explicit, highly readable verification
-        verify(typeToMock, times(2)).add("one");
+        verify(typeToMock, times(1)).add("one");
         verify(typeToMock).clear();
 
         // you can mock concrete classes, not only interfaces

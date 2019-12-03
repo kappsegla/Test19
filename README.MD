@@ -1,0 +1,1 @@
+![](https://github.com/kappsegla/Test19/workflows/Java%20CI/badge.svg)
