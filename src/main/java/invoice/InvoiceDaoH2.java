@@ -4,11 +4,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InvoiceDaoHSQL implements InvoiceDao {
+public class InvoiceDaoH2 implements InvoiceDao {
 
     private static Connection c;
 
-    public InvoiceDaoHSQL() {
+    public InvoiceDaoH2() {
         try {
             if(c!=null) return;
             //http://www.h2database.com/html/features.html#in_memory_databases

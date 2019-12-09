@@ -9,7 +9,7 @@ public class InvoiceView {
     public static void main(String[] args) {
 //        InvoiceView invoiceView = new InvoiceView();
 //        InvoiceDaoHSQL invoiceDaoHSQL = new InvoiceDaoHSQL();
-//        InvoiceFilter invoiceFilter = new InvoiceFilter(invoiceDaoHSQL);
+//        InvoiceFilter invoiceFilter = new InvoiceFilter(invoiceDaoH2);
 //
 //        invoiceDaoHSQL.save(new Invoice("Martin",99));
 //
