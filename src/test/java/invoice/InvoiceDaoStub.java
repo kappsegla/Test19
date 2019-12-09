@@ -9,11 +9,6 @@ public class InvoiceDaoStub implements InvoiceDao {
     }
 
     @Override
-    public void InvoiceDao() {
-
-    }
-
-    @Override
     public List<Invoice> all() {
         return List.of(new Invoice("Martin", 100),
                 new Invoice("Kalle", 99),

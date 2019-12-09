@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 public class InvoiceTestIT {
     @Test
-    void integrationTest(){
+    void integrationTestSave(){
         //fail("This integration test is supposed to fail. Must be implemented for real soon.");
     }
 }

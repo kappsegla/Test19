@@ -8,12 +8,11 @@ public class InvoiceDaoHSQL implements InvoiceDao {
 
     private static Connection c;
 
-    @Override
-    public void InvoiceDao() {
+    public InvoiceDaoHSQL() {
         try {
             if(c!=null) return;
-
-            c = DriverManager.getConnection("jdbc:hsqldb:file:mymemdb.db", "SA", "");
+            //http://www.h2database.com/html/features.html#in_memory_databases
+            c = DriverManager.getConnection("jdbc:h2:mem:", "sa", "");
             c.prepareStatement("create table invoice (name varchar(100), value double)").execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
