@@ -15,10 +15,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+
 public class InvoiceTestIT {
     @Test
-    @Order(1)
     void invoiceFilterIntegrationTestWithDatabaseBackendFindsOneInvoice() {
         //fail("This integration test is supposed to fail. Must be implemented for real soon.");
         InvoiceDao invoiceDao = new InvoiceDaoH2();
@@ -35,7 +34,6 @@ public class InvoiceTestIT {
     }
 
     @Test
-    @Order(2)
     void invoiceViewPrintsOneInvoice() throws InterruptedException {
         ByteArrayOutputStream outSpy = new ByteArrayOutputStream();
 
