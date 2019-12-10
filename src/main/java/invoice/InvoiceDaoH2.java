@@ -6,13 +6,13 @@ import java.util.List;
 
 public class InvoiceDaoH2 implements InvoiceDao {
 
-    private static Connection c;
+    private Connection c;
 
     public InvoiceDaoH2() {
         try {
             if(c!=null) return;
             //http://www.h2database.com/html/features.html#in_memory_databases
-            c = DriverManager.getConnection("jdbc:h2:mem:", "sa", "");
+            c = DriverManager.getConnection("jdbc:h2:mem:", "", "");
             c.prepareStatement("create table invoice (name varchar(100), value double)").execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
