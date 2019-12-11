@@ -4,8 +4,6 @@ package invoice;
 /* An integration test verifies the workings of a complete program,
  a module, or a set of dependant classes.*/
 
-import console.ConsoleWriter;
-import org.junit.Ignore;
 import org.junit.jupiter.api.*;
 
 import java.io.ByteArrayOutputStream;
