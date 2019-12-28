@@ -3,11 +3,15 @@ package console;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledOnOs;
 import org.junit.jupiter.api.condition.EnabledOnOs;
+import org.junit.jupiter.api.io.TempDir;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.PrintStream;
+import java.nio.file.Path;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.InstanceOfAssertFactories.FILE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.condition.OS.WINDOWS;
 
@@ -38,4 +42,13 @@ class ConsoleWriterTest {
                 .startsWith("Text1Text2")
                 .endsWith("\r\n");
     }
+
+
+    @Test
+    void fileTest(@TempDir Path tempPath){
+
+            tempPath.resolve("file.txt");
+
+    }
+
 }
