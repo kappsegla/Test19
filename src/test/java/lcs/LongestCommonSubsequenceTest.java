@@ -23,17 +23,12 @@ class LongestCommonSubsequenceTest {
         Set<String> actual = lcs.lcs("ABCBDAB", "BDCABA");
         assertEquals(expectedSet, actual);
     }
-
-    @ParameterizedTest
-    @MethodSource("stringStringAndSetProvider")
-    void testForLongestCommonSubsequence(String a, String b, Set<String> set) {
-        Set<String> expectedSet = Set.of("BCAB", "BCBA", "BDAB");
-
-        Set<String> actual = lcs.longestCommonSubsequence("ABCBDAB", "BDCABA");
-        assertEquals(expectedSet, actual);
+    @Test
+    void testForLongestCommonSubsequence() {
+        Set<String> expected = Set.of("samma", "sidor", "längd.\");", "triangel,");
+        Set<String> actual = lcs.longestCommonSubsequence("System.out.println(\"Liksidig triangel, 3 sidor av samma längd.\");", "System.out.println(\"Likbent triangel, 2 sidor med samma längd.\");");
+        assertEquals(expected, actual);
     }
-
-
 
     static Stream<Arguments> stringStringAndSetProvider() {
         return Stream.of(
