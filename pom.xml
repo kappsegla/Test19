@@ -13,6 +13,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <skipSurefire>false</skipSurefire>
 
         <!-- This configures the compiler to produce Java 8 class files. -->
         <!-- The minimum JDK version installed is 8 of course, but newer JDK releases should work too. -->

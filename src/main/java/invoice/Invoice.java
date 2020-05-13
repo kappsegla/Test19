@@ -1,6 +1,7 @@
 package invoice;
 
 import java.util.Objects;
+import java.util.Optional;
 
 public class Invoice {
 
@@ -31,6 +32,16 @@ public class Invoice {
         if (Double.compare(invoice.value, value) != 0) return false;
         return customer != null ? customer.equals(invoice.customer) : invoice.customer == null;
     }
+
+//@Override
+//final public boolean equals(Object o) {
+//    return Optional.ofNullable(o)
+//            .filter(that -> that instanceof Invoice)
+//            .map(that -> (Invoice) that)
+//            .filter(that -> Objects.equals(this.customer, that.customer))
+//            .filter(that -> Objects.equals(this.value, that.value))
+//            .isPresent();
+//}
 
     @Override
     final public int hashCode() {
