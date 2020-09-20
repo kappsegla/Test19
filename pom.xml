@@ -5,6 +5,8 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+    <!--    https://help.mulesoft.com/s/article/how-to-check-the-latest-release-version-of-dependencies-in-maven-3-->
+
     <groupId>com.example</groupId>
     <artifactId>com.example.test</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -19,11 +21,9 @@
         <!-- The minimum JDK version installed is 8 of course, but newer JDK releases should work too. -->
         <!--    <maven.compiler.source>1.8</maven.compiler.source>-->
         <!--    <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>-->
-
-        <junit.jupiter.version>5.5.2</junit.jupiter.version>
-        <junit.platform.version>1.6.0-M1</junit.platform.version>
-        <mockito.version>3.1.0</mockito.version>
-        <jacoco.plugin.version>0.8.5</jacoco.plugin.version>
+        <junit.jupiter.version>5.7.0</junit.jupiter.version>
+        <mockito.version>3.5.11</mockito.version>
+        <jacoco.plugin.version>0.8.6</jacoco.plugin.version>
     </properties>
 
     <dependencies>
@@ -40,12 +40,12 @@
         <dependency>
             <groupId>org.spf4j</groupId>
             <artifactId>spf4j-core</artifactId>
-            <version>8.6.10</version>
+            <version>8.8.5</version>
         </dependency>
         <dependency>
             <groupId>org.spf4j</groupId>
             <artifactId>spf4j-ui</artifactId>
-            <version>8.6.10</version>
+            <version>8.8.5</version>
         </dependency>
         <!-- Testing dependencies. -->
         <!-- https://stackoverflow.com/questions/48448331/difference-between-junit-jupiter-api-and-junit-jupiter-engine/55084036#55084036-->
@@ -70,50 +70,50 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.14.0</version>
+            <version>3.17.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>4.8.0</version>
+            <version>6.7.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>4.8.0</version>
+            <version>6.7.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>nl.jqno.equalsverifier</groupId>
             <artifactId>equalsverifier</artifactId>
-            <version>3.1.10</version>
+            <version>3.4.3</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <version>1.4.194</version>
+            <version>1.4.200</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
-            <version>4.1.2</version>
+            <version>4.3.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.openjdk.jmh</groupId>
             <artifactId>jmh-core</artifactId>
-            <version>1.22</version>
+            <version>1.25.2</version>
         </dependency>
         <dependency>
             <groupId>org.openjdk.jmh</groupId>
             <artifactId>jmh-generator-annprocess</artifactId>
-            <version>1.22</version>
+            <version>1.25.2</version>
         </dependency>
-     </dependencies>
+    </dependencies>
 
     <build>
         <plugins>
@@ -123,7 +123,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <release>11</release>
+                    <release>15</release>
                 </configuration>
             </plugin>
             <plugin>
@@ -186,7 +186,7 @@
                 <!-- Unit tests are run during the test phase. -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M3</version>
+                <version>3.0.0-M5</version>
                 <!-- https://stackoverflow.com/questions/46712510/how-to-skip-surefire-tests-but-run-failsafe-tests
                 mvn clean verify -DskipSurefire=true
                 -->
@@ -200,7 +200,10 @@
                 <!-- Integration tests are run during the verify phase. -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>3.0.0-M3</version>
+                <version>3.0.0-M5</version>
+                <configuration>
+                    <classesDirectory>${project.build.outputDirectory}</classesDirectory>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>
