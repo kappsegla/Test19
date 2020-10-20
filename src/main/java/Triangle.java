@@ -45,7 +45,7 @@ public class Triangle {
      * @return true or false
      */
     public boolean isEquilateral() {
-        if (uniqueSides() == 2) {
+        if (uniqueSides() == 1) {
             return true;
         }
         return false;

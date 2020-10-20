@@ -2,7 +2,7 @@ package invoice;
 
 import java.util.List;
 
-public class InvoiceDaoStub implements InvoiceDao {
+public class InvoiceDaoStub extends InvoiceDao {
 
     public InvoiceDaoStub() {
 
