@@ -1,5 +1,6 @@
 package invoice;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
@@ -17,6 +18,7 @@ class InvoiceFilterTest {
     @Mock List<String> listOfStrings;
 
     @Test
+    @Disabled
     void filterReturnsListOfInvoicesWithValueLessThan100() {
         InvoiceDao invoiceDao = new InvoiceDaoStub();
 
